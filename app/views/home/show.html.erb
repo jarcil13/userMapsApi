@@ -1,0 +1,8 @@
+<h1>Welcome</h1>
+<h1>Your Email: <%= current_user.email %> </h1>
+<p>This is your home, here you will find your markers</p>
+<%= button_to "Log out", destroy_user_session_url, method: :delete %>
+<br></br>
+<div>If you want to use the API and send position marks, use this secure TOKEN </div>
+<br></br>
+<div> <%= current_user.token %> </div>
