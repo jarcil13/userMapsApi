@@ -8,8 +8,6 @@
     <p class="alert"><%= alert %></p>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVmUsfWZKkYQ8mlvE3N70jbjqnca63KRU&callback=initMap"> </script>
 
     <style>

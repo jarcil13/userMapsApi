@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'try/api'
   get 'home/show'
+  devise_for :users
   get 'home/index'
   root 'home#index'
 

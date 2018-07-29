@@ -7,8 +7,9 @@ class Api::V1::MarkersController < Api::V1::BaseController
     end
 
     def create
-      data =  request.body.read()
-      @marker = @user.markers.new(JSON.parse(data))
+      #@marker = @user.markers.new(marker_params)
+      request.body.read()
+      @marker = @user.markers.new()
         if @marker.save
             render json: @marker, status: :created
         else
@@ -24,6 +25,9 @@ class Api::V1::MarkersController < Api::V1::BaseController
     end
 
     def show
+    end
+
+    def marker_params
     end
     
 end

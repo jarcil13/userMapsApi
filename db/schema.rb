@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_22_224115) do
+ActiveRecord::Schema.define(version: 2018_07_28_034933) do
 
   create_table "markers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.float "latitude"
-    t.float "longitude"
+    t.float "lati"
+    t.float "long"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_markers_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -32,10 +34,11 @@ ActiveRecord::Schema.define(version: 2018_07_22_224115) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "token"
+    t.string "api_token"
+    t.index ["api_token"], name: "index_users_on_api_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["token"], name: "index_users_on_token"
   end
 
+  add_foreign_key "markers", "users"
 end

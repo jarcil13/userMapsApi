@@ -1,8 +1,20 @@
 class HomeController < ApplicationController
-    def show
-    end
+  
+  def index
+  end
+  
+  def show
+    if user_signed_in?
+      @markers = current_user.markers.all
 
-    #this is root page
-    def index
+      if @markers.empty?
+        @flati = 0
+        @flong = 0
+      else
+        @flati = @markers.first.lati
+        @flong = @markers.first.long
+      end
     end
+  end
+  
 end
