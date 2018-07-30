@@ -31,8 +31,14 @@ services:
   nginx:
     image: nginx
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx.conf:/etc/nginx/confg.d/default.conf
+      - ./dh-param/dhparam-2048.pem:/etc/ssl/certs/dhparam-2048.pem
+      - /docker-volumes/etc/letsencrypt/live/jdarcilam.tk/fullchain.pem:/etc/letsencrypt/live/jdarcilam.tk/fullchain.pem
+      - /docker-volumes/etc/letsencrypt/live/jdarcilam.tk/privkey.pem:/etc/letsencrypt/live/jdarcilam.tk/privkey.pem
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
+      - web
+    links:
       - web
