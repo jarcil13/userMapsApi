@@ -2,7 +2,7 @@
 
 Este proyecto expone un API REST para enviar marcadores que luego pueden ser visualizados a partir de una interfaz de usuario usando Google Maps API.
 
-#Detalles tecnicos
+# Detalles tecnicos
 
 * ruby 2.5.1
 
@@ -12,7 +12,7 @@ Este proyecto expone un API REST para enviar marcadores que luego pueden ser vis
 
 * Database in mysql 
 
-#Morfologia de un POST a la API REST
+# Morfologia de un POST a la API REST
 
 * para enviar marcadores
 
@@ -27,7 +27,7 @@ body: {lati: <latitud>, long: <longitud>}
 
 Sigue los pricipios y convenciones de REST.
 
-#Modo de uso
+# Modo de uso
 
 Para usar la aplicacion:
 
